@@ -73,11 +73,11 @@ function normalizeHexColor(hexString) {
 }
 
 /**
- * Darkens a given hexadecimal color
- * If an rgb color is supplied it converts it to hexadecimal and then darkens it, and returns the result in hexadecimal
+ * Darkens a given hexadecimal color.
+ * If the supplied color is in rgb/rgba, the darkened color is in rgb/rgba, else the darkened color is in hexadecimal
  * @param {String} color An hexxadecimal string e.g #00FFCC
  * @param {Number} percent A number between 0.0 and 1.0
- * @returns {undefined} an hexadecimal string that is a darkened version of the color
+ * @returns {string} an hexadecimal or rgb/rgba string(output format depends on the input format) that is a brighter version of the color
  */
 function darkenColor(color, percent) {
     if (typeof color !== 'string') {
@@ -168,10 +168,10 @@ function darkenColor(color, percent) {
 }
 /**
  * Brightens a given hexadecimal color.
- * If an rgb color is supplied it converts it to hexadecimal and then brightens it, and returns the result in hexadecimal
+ * If the supplied color is in rgb/rgba, the darkened color is in rgb/rgba, else the darkened color is in hexadecimal
  * @param {String} color An hexxadecimal string e.g #00FFCC
- * @param {Number} percent A number between 0 and 100
- * @returns {undefined} an hexadecimal string that is a brighter version of the color
+ * @param {Number} percent A number between 0.0 and 1.0
+ * @returns {string} an hexadecimal or rgb/rgba string(output format depends on the input format) that is a brighter version of the color
  */
 function brightenColor(color, percent) {
     if (typeof color !== 'string') {
